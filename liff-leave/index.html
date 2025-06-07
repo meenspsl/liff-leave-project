@@ -8,17 +8,16 @@
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 </head>
 <body class="bg-light">
-
 <div class="container py-4">
   <h4 class="text-center mb-4">ระบบลา (ค้นหา ID)</h4>
 
-  <input type="text" id="idInput" class="form-control mb-3" placeholder="รหัสพนักงาน (ID)">
+  <input type="text" id="idInput" class="form-control mb-3" placeholder="รหัสนักศึกษา (ID)">
   <button id="searchBtn" class="btn btn-primary w-100 mb-2">ค้นหา</button>
-  <div id="searchStatus" class="text-center small text-muted mb-4"></div>
+  <div id="searchStatus" class="text-center small text-muted mb-3"></div>
 
   <div id="leaveForm" class="d-none">
-    <input type="text" id="nameInput" class="form-control mb-2" placeholder="ชื่อ" readonly>
-    <input type="text" id="lastnameInput" class="form-control mb-2" placeholder="นามสกุล" readonly>
+    <input type="text" id="nameInput" class="form-control mb-2" readonly>
+    <input type="text" id="lastnameInput" class="form-control mb-2" readonly>
     <input type="date" id="startDate" class="form-control mb-2">
     <input type="date" id="endDate" class="form-control mb-2">
     <textarea id="reason" class="form-control mb-3" placeholder="เหตุผลในการลา"></textarea>
@@ -28,9 +27,9 @@
   </div>
 
   <hr>
-  <p class="text-center small">หากยังไม่มีข้อมูลพนักงาน → <a href="register.html">ลงทะเบียนใหม่</a></p>
+  <p class="text-center small">หากยังไม่มีนักศึกษา → <a href="register.html">ลงทะเบียนใหม่</a></p>
+  <p class="text-center mt-4 small">ดูสรุป → <a href="summary.html">นักศึกษาที่ลาวันนี้</a></p>
 </div>
-
 <script src="main.js"></script>
 </body>
 </html>

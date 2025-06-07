@@ -1,7 +1,7 @@
 const liffId = '2007471158-y25QK5Ae';
-const scriptURL = 'https://script.google.com/a/macros/yru.ac.th/s/AKfycbwpL9HEOd0QPBiH1gx6nmncLTP1NBGuTnTmtG4G0tlNJJK-DbNMC3s81iHe2OWTohz8/exec';
+const scriptURL = 'https://script.google.com/a/macros/yru.ac.th/s/AKfycbwkF9bIFSLi9_PD86cRYhQFpyZhhdoyq5yN8aAlDh1BMe0BGXT2LC/exec';
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
   liff.init({ liffId });
 
   const newId = document.getElementById('newId');
@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', function () {
     fetch(scriptURL, {
       method: 'POST',
       body: JSON.stringify(payload)
-    }).then(res => res.text()).then(() => {
-      regStatus.innerText = 'เพิ่มข้อมูลเรียบร้อย';
+    }).then(() => {
+      regStatus.innerText = 'เพิ่มข้อมูลเรียบร้อยแล้ว';
     }).catch(() => {
       regStatus.innerText = 'เกิดข้อผิดพลาด';
     });

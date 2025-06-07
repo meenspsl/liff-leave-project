@@ -1,10 +1,8 @@
 const liffId = '2007471158-y25QK5Ae';
-const scriptURL = 'https://script.google.com/a/macros/yru.ac.th/s/AKfycbwpL9HEOd0QPBiH1gx6nmncLTP1NBGuTnTmtG4G0tlNJJK-DbNMC3s81iHe2OWTohz8/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxSUuNJGkA8m8mrLuf3Y0ynw57tXxP5EIV1O6otCayZ9Eb9DsI6YECuCgk_Tn5hWHuY/exec';
 
-document.addEventListener('DOMContentLoaded', function () {
-  liff.init({ liffId }).then(() => {
-    // ready
-  });
+document.addEventListener('DOMContentLoaded', () => {
+  liff.init({ liffId });
 
   const idInput = document.getElementById('idInput');
   const searchBtn = document.getElementById('searchBtn');
@@ -13,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const nameInput = document.getElementById('nameInput');
   const lastnameInput = document.getElementById('lastnameInput');
   const leaveForm = document.getElementById('leaveForm');
-
   const leaveBtn = document.getElementById('leaveBtn');
   const backBtn = document.getElementById('backBtn');
   const leaveStatus = document.getElementById('leaveStatus');
@@ -33,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
           leaveForm.classList.remove('d-none');
           searchStatus.innerText = '';
         } else {
-          searchStatus.innerText = 'ไม่พบข้อมูลพนักงาน กรุณาลงทะเบียนใหม่';
+          searchStatus.innerText = 'ไม่พบข้อมูล กรุณาลงทะเบียนใหม่';
         }
       }).catch(() => {
         searchStatus.innerText = 'เกิดข้อผิดพลาด';
@@ -54,8 +51,8 @@ document.addEventListener('DOMContentLoaded', function () {
     fetch(scriptURL, {
       method: 'POST',
       body: JSON.stringify(payload)
-    }).then(res => res.text()).then(() => {
-      leaveStatus.innerText = 'บันทึกข้อมูลสำเร็จ';
+    }).then(() => {
+      leaveStatus.innerText = 'บันทึกข้อมูลเรียบร้อย';
     }).catch(() => {
       leaveStatus.innerText = 'เกิดข้อผิดพลาดในการบันทึก';
     });
